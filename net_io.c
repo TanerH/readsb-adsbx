@@ -1092,6 +1092,8 @@ float ieee754_binary32_le_to_float(uint8_t *data) {
 }
 
 static void handle_radarcape_position(float lat, float lon, float alt) {
+	// disable this
+	return;
     if (!isfinite(lat) || lat < -90 || lat > 90 || !isfinite(lon) || lon < -180 || lon > 180 || !isfinite(alt))
         return;
 
