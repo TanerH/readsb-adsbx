@@ -340,7 +340,7 @@ static int doGlobalCPR(struct aircraft *a, struct modesMessage *mm, double *lat,
         // find reference location
         double reflat, reflon;
 
-        if (trackDataValid(&a->position_valid)) { // Ok to try aircraft relative first
+        if (a->pos_set) { // Ok to try aircraft relative first
             reflat = a->lat;
             reflon = a->lon;
         } else if (Modes.bUserFlags & MODES_USER_LATLON_VALID) {
@@ -581,6 +581,7 @@ static void updatePosition(struct aircraft *a, struct modesMessage *mm) {
                     a->pos_reliable_odd = min(a->pos_reliable_odd + 1, Modes.filter_persistence);
                 } else {
                     a->pos_reliable_even = min(a->pos_reliable_even + 1, Modes.filter_persistence);
+                    a->pos_set = 1;
                 }
 
                 if (trackDataValid(&a->gs_valid))

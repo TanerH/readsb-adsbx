@@ -268,7 +268,7 @@ typedef enum {
 
 #define MODES_NOTUSED(V) ((void) V)
 
-#define AIRCRAFTS_BUCKETS 2048
+#define AIRCRAFTS_BUCKETS (1<<14)
 
 // Include subheaders after all the #defines are in place
 
