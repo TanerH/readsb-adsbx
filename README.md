@@ -72,6 +72,15 @@ It is designed to build as a Debian package.
 
 ## Building under jessie, stretch or buster
 
+The following command will install the basic libraries required for
+building on Debian.
+
+```
+$ apt-get install libncurses5-dev
+```
+
+The setup of specific RTL-SDR drivers is documented below.
+
 ### Dependencies - PlutoSDR (ADALM-PLUTO)
 
 You will need the latest build and install of libad9361-dev and libiio-dev. The Debian packages
